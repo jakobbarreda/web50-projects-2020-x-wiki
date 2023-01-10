@@ -1,0 +1,10 @@
+{% extends "encyclopedia/layout.html" %} {%block title%} edit {%endblock%}
+{%block body%}
+<link rel="stylesheet" href="/wiki/staticfiles/" />
+<div>
+  <form action="{% url 'edit' title %}" method="post">
+    {%csrf_token%} {{edit_form}}
+    <button class="button">Submit Edit</button>
+  </form>
+</div>
+{%endblock%}
